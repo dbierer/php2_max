@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Interfaces;
 
 interface PersonInterface {
     public function getFirstName(): string;
