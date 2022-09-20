@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Classes;
+namespace App\Models;
 
 class Employee extends Person
 {
@@ -13,7 +13,12 @@ class Employee extends Person
 
     public function __toString(): string
     {
-        return 'This is not supposed to be echoed';
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
+
+    public function getEmploymentStatus(): string
+    {
+        return $this->employmentStatus;
     }
 
     public function setEmploymentStatus(string $employmentStatus): void

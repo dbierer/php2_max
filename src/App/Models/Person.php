@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Classes;
+namespace App\Models;
 
 use App\Interfaces\PersonInterface;
 
