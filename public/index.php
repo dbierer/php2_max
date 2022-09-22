@@ -3,7 +3,6 @@
 use App\Exceptions\CreateUserException;
 use App\Models\Customer;
 use App\Models\Employee;
-use App\Models\Person;
 use App\Models\User;
 
 session_start();
@@ -17,7 +16,7 @@ $customer = new Customer('James', 'Bond');
 
 $user = new User($customer);
 
-$employee->setEmploymentStatus(true);
+//$employee->setStatus(true);
 $customer->setCustomerStatus(true);
 
 echo $customer->getCustomerStatus();
