@@ -2,35 +2,20 @@
 
 namespace App\Models;
 
-use App\Exceptions\CreateUserException;
-use App\Interfaces\PersonInterface;
-
 class User
 {
-    private PersonInterface $person;
+    public string $firstName;
 
-    public function __construct(PersonInterface $person)
+    public string $lastName;
+
+    public function __construct(string $firstName, string $lastName)
     {
-        $this->person = $person;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
     }
 
-    public function show(): string
+    public function __toString(): string
     {
-        $customer = new Customer('first', 'last');
-
-        return $customer . $this->person;
-    }
-
-
-    /**
-     * @throws CreateUserException
-     */
-    public function create(string $username, $password = null): string
-    {
-        if ($password === null) {
-            throw new CreateUserException('Password is not set', null);
-        }
-
-        return 'User created!';
+        return $this->firstName . ' ' . $this->lastName;
     }
 }

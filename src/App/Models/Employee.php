@@ -2,8 +2,18 @@
 
 namespace App\Models;
 
+use App\Trait\ActiveTrait;
+use App\Trait\EmployedTrait;
+
 class Employee extends Person
 {
+    use ActiveTrait, EmployedTrait {
+        ActiveTrait::getStatus insteadof EmployedTrait;
+            EmployedTrait::getStatus as getEmployed;
+        EmployedTrait::setStatus insteadof ActiveTrait;
+            ActiveTrait::setStatus as getActive;
+    }
+
     protected string $employmentStatus;
 
     public function __serialize(): array
@@ -14,15 +24,5 @@ class Employee extends Person
     public function __toString(): string
     {
         return $this->getFirstName() . ' ' . $this->getLastName();
-    }
-
-    public function getEmploymentStatus(): string
-    {
-        return $this->employmentStatus;
-    }
-
-    public function setEmploymentStatus(string $employmentStatus): void
-    {
-        $this->employmentStatus = $employmentStatus;
     }
 }

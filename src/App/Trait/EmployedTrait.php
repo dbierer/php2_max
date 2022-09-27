@@ -1,16 +1,18 @@
 <?php
 
-trait ActiveTrait
-{
-    public bool $active;
+namespace App\Trait;
 
-    public function setActive(bool $value): void
+trait EmployedTrait
+{
+    public bool $status;
+
+    public function setStatus(bool $value): void
     {
-        $this->active = $value;
+        $this->status = $value;
     }
 
-    public function getActive(): bool
+    public function getStatus(): bool
     {
-        return $this->active;
+        return $this->status;
     }
 }

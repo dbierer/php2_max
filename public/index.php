@@ -1,9 +1,7 @@
 <?php
 
-use App\Exceptions\CreateUserException;
-use App\Models\Customer;
-use App\Models\Employee;
 use App\Models\User;
+use App\Repositories\DatabaseUserRepository;
 
 session_start();
 spl_autoload_register(static function ($class) {
@@ -11,24 +9,10 @@ spl_autoload_register(static function ($class) {
     require_once $fn;
 });
 
-$employee = new Employee('Max', 'Simon');
-$customer = new Customer('James', 'Bond');
+$firstName = 'Mark';
+$lastName = 'Watney';
+$repository = new DatabaseUserRepository();
 
-$user = new User($customer);
+$user = new User($firstName, $lastName);
+$repository->add($user);
 
-//$employee->setStatus(true);
-$customer->setCustomerStatus(true);
-
-echo $customer->getCustomerStatus();
-echo "\n" . $employee;
-echo "\n" . $customer . "\n";
-
-try {
-    $user->create('JBond');
-} catch (CreateUserException $e) {
-    echo $e;
-} finally {
-    echo "To resolve this set a password \n";
-}
-
-var_dump($employee);
