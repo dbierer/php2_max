@@ -1,0 +1,18 @@
+{
+    "name": "max/project1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Max\\Project1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Max Simon",
+            "email": "msimon@leviy.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    }
+}

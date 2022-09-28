@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace Max\Project1\App\Repositories;
 
-use App\Models\User;
+use Max\Project1\App\Models\User;
 use PDO;
 use PDOException;
 
