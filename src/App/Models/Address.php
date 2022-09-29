@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Max\Project1\App\Models;
 
 class Address
 {

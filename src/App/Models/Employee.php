@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Max\Project1\App\Models;
 
 use App\Trait\ActiveTrait;
 use App\Trait\EmployedTrait;

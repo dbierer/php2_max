@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace Max\Project1\App\Models;
 
-use App\Interfaces\PersonInterface;
+use Max\Project1\App\Interfaces\PersonInterface;
 
 abstract class Person implements PersonInterface
 {

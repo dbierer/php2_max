@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Max\Project1\App\Exceptions;
 
 use Exception;
 
